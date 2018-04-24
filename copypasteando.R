@@ -1,7 +1,7 @@
 #leer del archivo
 
-dir = '/Users/marcelorisk/Dropbox/MateriaDataMining/Clases/'
-dato = read.csv(paste( dir , 'TS_1.csv',sep=""))
+dir = ''
+dato = read.csv(paste( dir , '10068.MIB.csv',sep=""))
 print (names(dato))
 # [1] "X" "t" "a0" "a1" "a2" "rn" "a"
 op <- par(mfrow = c(2, 2))
@@ -35,15 +35,15 @@ lines (dato$t,difMA21,col='green')
 
 #plot frecuencia
 
-fft .a = Mod(fft(dato$a))
-fft .outMA7 = Mod(fft(outMA7))
-fft .difMA7 = Mod(fft(difMA7))
-fft .outMA21 = Mod(fft(outMA21))
-fft .difMA21 = Mod(fft(difMA21))
+fft.a = Mod(fft(dato$a))
+fft.outMA7 = Mod(fft(outMA7))
+fft.difMA7 = Mod(fft(difMA7))
+fft.outMA21 = Mod(fft(outMA21))
+fft.difMA21 = Mod(fft(difMA21))
 op <- par(mfrow = c(1, 1))
-plot ( fft .a
+plot ( fft.a
        ,type='l ' , col='black' , ylim=c(0,800),xlim=c(0,128), lty =2)
-lines ( fft .outMA7,col='black')
-lines ( fft .difMA7,col='blue')
-lines ( fft .outMA21,col='red')
-lines ( fft .difMA21,col='green')
+lines ( fft.outMA7,col='black')
+lines ( fft.difMA7,col='blue')
+lines ( fft.outMA21,col='red')
+lines ( fft.difMA21,col='green')

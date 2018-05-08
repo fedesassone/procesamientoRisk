@@ -3,7 +3,7 @@
 dir = ''
 dato = read.csv(paste( dir , '10068.MIB.csv',sep=""))
 print (names(dato))
-# [1] "X" "t" "a0" "a1" "a2" "rn" "a"
+# [1]  "time" "RR" "beat" 
 op <- par(mfrow = c(2, 2))
 plot (dato$t,dato$a0,type='l ' , xlim=c(0,260),xlab='dia' , ylab='a0')
 plot (dato$t,dato$a1,type='l ' , xlim=c(0,260),xlab='dia' , ylab='a1')
@@ -11,6 +11,9 @@ plot (dato$t,dato$a2,type='l ' , xlim=c(0,260),xlab='dia' , ylab='a2')
 plot (dato$t,dato$rn,type='l ' , xlim=c(0,260),xlab='dia' , ylab='rn')
 op <- par(mfrow = c(1, 1))
 plot (dato$t,dato$a,type='l ' , xlim=c(0,260),xlab='dia' , ylab='a')
+
+
+
 
 # Descomposición de una Serie Temporal con filtros de MA
 

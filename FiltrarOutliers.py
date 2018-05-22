@@ -9,6 +9,7 @@ fw.writelines('time,RR,beat')
 fw.write('\n')
 tiempo = 0.
 totalRR = 0
+tiempo_total = 0
 for j in range(5,nlines-1):
     line = lineas[j]
     w0 = line[0:1]
@@ -19,4 +20,5 @@ for j in range(5,nlines-1):
         wline = str(tiempo) + ',' + w1 + ',' + w0 
         fw.write(wline)
         fw.write('\n')
-
+        tiempo_total = tiempo + tiempo_total
+print tiempo_total*1000.0

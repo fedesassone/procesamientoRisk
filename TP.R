@@ -9,11 +9,11 @@ points(dato.rr $t,dato.rr $RR,pch=20)
 
 #parte 2
 
-plot(dato.rr$t,dato.rr$RR,type='l', ylab='RR (ms)',xlab='tiempo(s)', xlim=c(0,72473),ylim=c(0,8000))
+plot(dato.rr$t,dato.rr$RR,type='l', ylab='RR (ms)',xlab='tiempo(s)', xlim=c(0,72473),ylim=c(0,20000))
 points(dato.rr$t,dato.rr$RR,pch=20)
 Nmuestro = as.integer(2*max(dato.rr$t))
-RRlineal = approx(dato.rr$t,dato.rr$RR,n=Nmuestro)
-RRspline = spline(dato.rr$t,dato.rr$RR,n=Nmuestro)
+RRlineal = approx(dato.rr$t,dato.rr$RR,n=as.integer(71377.58399999907/0.25))
+RRspline = spline(dato.rr$t,dato.rr$RR,n=as.integer(71377.58399999907/0.25))
 lines (RRlineal$x, RRlineal$y, col='red')
 points(RRlineal$x, RRlineal$y,pch=20,col='red')
 lines (RRspline$x,RRspline$y, col='blue')
@@ -29,17 +29,14 @@ plot(dato.rr $t,dato.rr $RR,type='l', ylab='RR (ms)',xlab='tiempo (s)')
 points(dato.rr $t,dato.rr $RR,pch=20)
 
 
-library (muStat)
-N = 137857
-tiempo = 0:(N-1)
-st1 = rnorm(N,mean=1,sd=0.5)
-indices = runif(25,min=5,max=45)
-st1[ indices ] = NA
-st11 = st1[ is.number(st1)]
-tiempo1 = tiempo[is.number(st1)]
-plot(tiempo1,st11, type='l')
-st2 = spline(tiempo1,st11,N)
-plot(tiempo,st1, type='b')
-lines (st2$x, st2$y, col='red', lty =2)
-points(st2$x, st2$y,pch=20,col='red')
+#parte 2
 
+plot(dato.rr$t,dato.rr$RR,type='l', ylab='RR (ms)',xlab='tiempo(s)', xlim=c(0,72473),ylim=c(0,3000))
+points(dato.rr$t,dato.rr$RR,pch=20)
+Nmuestro = as.integer(2*max(dato.rr$t))
+RRlineal = approx(dato.rr$t,dato.rr$RR,n=as.integer(68927.72799999903/0.25))
+RRspline = spline(dato.rr$t,dato.rr$RR,n=as.integer(68927.72799999903/0.25))
+lines (RRlineal$x, RRlineal$y, col='red')
+points(RRlineal$x, RRlineal$y,pch=20,col='red')
+lines (RRspline$x,RRspline$y, col='blue')
+points(RRspline$x,RRspline$y,pch=20,col='green')

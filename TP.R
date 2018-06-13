@@ -44,3 +44,47 @@ lines (RRlineal$x, RRlineal$y, col='red')
 points(RRlineal$x, RRlineal$y,pch=20,col='red')
 lines (RRspline$x,RRspline$y, col='blue')
 points(RRspline$x,RRspline$y,pch=20,col='green')
+
+#hacer un filtrado MA e ir viendo como se suaviza la curva para distinguir entre dia y noche
+
+tiempo_total = 68927.72799999903
+cte = 72473
+
+
+RRlineal.x.MA25 = filter(RRlineal$y, rep(1/25,25), circular=TRUE)
+plot(RRlineal$x, RRlineal.x.MA25)
+lines(RRlineal$x, RRlineal.x.MA25, col = 'red')
+
+RRlineal.x.MA50 = filter(RRlineal$y, rep(1/50,50), circular=TRUE)
+plot(RRlineal$x, RRlineal.x.MA50)
+lines(RRlineal$x, RRlineal.x.MA50, col = 'green')
+
+
+RRlineal.x.MA100 = filter(RRlineal$y, rep(1/100,100), circular=TRUE)
+plot(RRlineal$x, RRlineal.x.MA100)
+lines(RRlineal$x, RRlineal.x.MA100, col = 'blue')
+
+
+RRlineal.x.MA500 = filter(RRlineal$y, rep(1/500,500), circular=TRUE)
+plot(RRlineal$x, RRlineal.x.MA500)
+lines(RRlineal$x, RRlineal.x.MA500, col = 'yellow')
+
+RRlineal.x.MA1000 = filter(RRlineal$y, rep(1/1000,1000), circular=TRUE)
+plot(RRlineal$x, RRlineal.x.MA1000)
+lines(RRlineal$x, RRlineal.x.MA1000, col = 'violet')
+
+RRlineal.x.MA2000 = filter(RRlineal$y, rep(1/2000,1000), circular=TRUE)
+plot(RRlineal$x, RRlineal.x.MA2000)
+lines(RRlineal$x, RRlineal.x.MA2000, col = 'red')
+
+RRlineal.x.MA5000 = filter(RRlineal$y, rep(1/5000,5000), circular=TRUE)
+plot(RRlineal$x, RRlineal.x.MA5000)
+lines(RRlineal$x, RRlineal.x.MA5000, col = 'green')
+
+RRlineal.x.MA10000 = filter(RRlineal$y, rep(1/10000,10000), circular=TRUE)
+plot(RRlineal$x, RRlineal.x.MA10000)
+lines(RRlineal$x, RRlineal.x.MA10000, col = 'yellow')
+
+RRlineal.x.MA60000 = filter(RRlineal$y, rep(1/60000,60000), circular=TRUE)
+plot(RRlineal$x, RRlineal.x.MA60000)
+lines(RRlineal$x, RRlineal.x.MA60000, col = 'green')
